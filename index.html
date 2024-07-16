@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">4Shared App</h1>
+        
+        <div class="card mb-4">
+            <div class="card-header">Upload File</div>
+            <div class="card-body">
+                <form id="uploadForm">
+                    <div class="form-group">
+                        <input type="text" id="usernameInput" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" id="fileInput" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+                <div id="uploadFeedback" class="mt-2"></div>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">Search Files</div>
+            <div class="card-body">
+                <form id="searchForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" id="queryInput" class="form-control" placeholder="Query">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" id="typeInput" class="form-control" placeholder="File Type (e.g., .txt)">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" id="userInput" class="form-control" placeholder="Username">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                <div id="searchFeedback" class="mt-2"></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Search Results</div>
+            <div class="card-body">
+                <ul id="resultsList" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

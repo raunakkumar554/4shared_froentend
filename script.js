@@ -7,7 +7,7 @@ $(document).ready(function() {
         var username = $('#usernameInput').val(); // Get username
 
         $.ajax({
-            url: `http://localhost:5000/upload?username=${username}`,
+            url: `https://foursharedapp-backend.onrender.com/upload?username=${username}`,
             type: 'POST',
             data: formData,
             processData: false,
@@ -29,14 +29,14 @@ $(document).ready(function() {
         var user = $('#userInput').val();
         
         $.ajax({
-            url: 'http://localhost:5000/search',
+            url: 'https://foursharedapp-backend.onrender.com/search',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ query: query, type: type, user: user }),
             success: function(response) {
                 $('#resultsList').empty();
                 response.forEach(function(file) {
-                    $('#resultsList').append('<li class="list-group-item">' + file + ' <a href="http://localhost:5000/download?fileName=' + file + '" class="btn btn-sm btn-primary float-right">Download</a></li>');
+                    $('#resultsList').append('<li class="list-group-item">' + file + ' <a href="https://foursharedapp-backend.onrender.com/download?fileName=' + file + '" class="btn btn-sm btn-primary float-right">Download</a></li>');
                 });
             },
             error: function(xhr, status, error) {
